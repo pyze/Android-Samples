@@ -45,7 +45,7 @@ public class EventsListingActivity extends AppCompatActivity implements OnItemCl
 	private void getClasses() {
 		try {
 			Class<?> PyzeEventsClass = Class
-					.forName("com.pyze.android.library.PyzeEvents");
+					.forName("com.pyze.android.PyzeEvents");
 			Class<?>[] classes = PyzeEventsClass.getClasses();
 			Toast.makeText(this, "Total class: " + classes.length, Toast.LENGTH_LONG).show();
 			for(Class<?> eventClass : classes) {

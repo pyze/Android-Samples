@@ -1,16 +1,15 @@
 package com.pyze.events.ui;
 
-import com.pyze.android.library.Pyze;
-import com.pyze.events.EventsManager;
-import com.pyze.events.R;
-import com.pyze.events.ui.AboutActivity;
-import com.pyze.events.ui.EventsListingActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.pyze.android.Pyze;
+import com.pyze.android.constants.Constants.PyzeLogLevel;
+import com.pyze.events.EventsManager;
+import com.pyze.events.R;
 
 public class HomeActivity extends AppCompatActivity implements OnClickListener {
 
@@ -18,7 +17,8 @@ public class HomeActivity extends AppCompatActivity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-		Pyze.initialize(getApplication());
+		Pyze.initializeEvents(getApplication());
+		Pyze.setLogLevel(PyzeLogLevel.DEBUG);
 		initViews();
 	}
 
