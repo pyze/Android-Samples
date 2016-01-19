@@ -55,6 +55,7 @@ public class MethodDetailActivity extends AppCompatActivity {
 						mCustomAttributesTv.setText(mCustomAttributesTv.getText() + "\n " 
 						+ entry.getKey() + " : " + entry.getValue());
 					}					
+					
 					arguments[index] = map;
 				} else if(parametersTypeArray[index].getName().equalsIgnoreCase("java.lang.String")) {
 					mRequiredAttributesTv.setVisibility(View.VISIBLE);
@@ -65,6 +66,14 @@ public class MethodDetailActivity extends AppCompatActivity {
 					mRequiredAttributesTv.setVisibility(View.VISIBLE);
 					mRequiredAttributesTv.setText(mRequiredAttributesTv.getText() + "\ntrue");
 					arguments[index] = true;
+				} else if(parametersTypeArray[index].getName().equalsIgnoreCase("long")) {
+					mRequiredAttributesTv.setVisibility(View.VISIBLE);
+					mRequiredAttributesTv.setText(mRequiredAttributesTv.getText() + "\n54834211");
+					arguments[index] = 54834211;
+				} else if(parametersTypeArray[index].getName().equalsIgnoreCase("com.pyze.android.events.dto.PyzeGeoPoint")) {
+					mRequiredAttributesTv.setVisibility(View.VISIBLE);
+					mRequiredAttributesTv.setText(mRequiredAttributesTv.getText() + "\nLongitude:12, Latitude:24");
+					arguments[index] = "12,24";
 				}
 			}
 			

@@ -17,8 +17,8 @@ public class HomeActivity extends AppCompatActivity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+		Pyze.initialize(getApplication(), PyzeLogLevel.DEBUG);
 		Pyze.initializeEvents(getApplication());
-		Pyze.setLogLevel(PyzeLogLevel.DEBUG);
 		initViews();
 	}
 
