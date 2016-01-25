@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pyze.android.collections.Values;
 import com.pyze.events.Constants.Extras;
 import com.pyze.events.EventsManager;
 import com.pyze.events.R;
@@ -45,7 +46,8 @@ public class MethodDetailActivity extends AppCompatActivity {
 		final Object[] arguments = new Object[parametersCount];
 		if(parametersCount > 0) {
 			for(int index = 0; index < parametersCount; index++) {
-				if(parametersTypeArray[index].getName().equalsIgnoreCase("java.util.Map")) {
+				String parameterType = parametersTypeArray[index].getName();
+				if(parameterType.equalsIgnoreCase("java.util.Map")) {
 					mCustomAttributesTv.setVisibility(View.VISIBLE);
 					Map<Object, Object> map = getCustomAttributesMap();
 					Set<Entry<Object, Object>> keyset = map.entrySet();
@@ -54,26 +56,38 @@ public class MethodDetailActivity extends AppCompatActivity {
 						Entry<Object, Object> entry = iterator.next();
 						mCustomAttributesTv.setText(mCustomAttributesTv.getText() + "\n " 
 						+ entry.getKey() + " : " + entry.getValue());
-					}					
-					
+					}				
 					arguments[index] = map;
-				} else if(parametersTypeArray[index].getName().equalsIgnoreCase("java.lang.String")) {
+				} else if(parameterType.equalsIgnoreCase("java.lang.String")) {
 					mRequiredAttributesTv.setVisibility(View.VISIBLE);
 					String attribute = mArgumentsArray[rGen.getNumber()];
 					mRequiredAttributesTv.setText(mRequiredAttributesTv.getText() + "\n" + attribute );
 					arguments[index] = attribute;
-				} else if(parametersTypeArray[index].getName().equalsIgnoreCase("boolean")) {
+				} else if(parameterType.equalsIgnoreCase("boolean")) {
 					mRequiredAttributesTv.setVisibility(View.VISIBLE);
 					mRequiredAttributesTv.setText(mRequiredAttributesTv.getText() + "\ntrue");
 					arguments[index] = true;
-				} else if(parametersTypeArray[index].getName().equalsIgnoreCase("long")) {
+				} else if(parameterType.equalsIgnoreCase("long")) {
 					mRequiredAttributesTv.setVisibility(View.VISIBLE);
 					mRequiredAttributesTv.setText(mRequiredAttributesTv.getText() + "\n54834211");
 					arguments[index] = 54834211;
-				} else if(parametersTypeArray[index].getName().equalsIgnoreCase("com.pyze.android.events.dto.PyzeGeoPoint")) {
+				} else if(parameterType.equalsIgnoreCase("com.pyze.android.events.dto.PyzeGeoPoint")) {
 					mRequiredAttributesTv.setVisibility(View.VISIBLE);
 					mRequiredAttributesTv.setText(mRequiredAttributesTv.getText() + "\nLongitude:12, Latitude:24");
 					arguments[index] = "12,24";
+				} else if(parameterType.equalsIgnoreCase("com.pyze.android.collections.Values")) {
+					Values values = new Values();
+					values.putValue("key1", "value1");
+					values.putValue("key2", "value2");
+					values.putValue("key3", "value3");
+					values.putValue("key4", "value4");
+					Iterator<Entry<Object, Object>> iterator = values.getAttributes().entrySet().iterator();
+					while(iterator.hasNext()) {
+						Entry<Object, Object> entry = iterator.next();
+						mCustomAttributesTv.setText(mCustomAttributesTv.getText() + "\n " 
+						+ entry.getKey() + " : " + entry.getValue());
+					}	
+					arguments[index] = values;
 				}
 			}
 			
