@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.pyze.android.Pyze;
-import com.pyze.android.constants.Constants.PyzeLogLevel;
+import com.pyze.android.constants.Constants.LogLevel;
 import com.pyze.events.EventsManager;
 import com.pyze.events.R;
 
@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-		Pyze.initialize(getApplication(), PyzeLogLevel.DEBUG);
+		Pyze.initialize(getApplication(), LogLevel.DEBUG);
 		Pyze.initializeEvents(getApplication());
 		initViews();
 	}
