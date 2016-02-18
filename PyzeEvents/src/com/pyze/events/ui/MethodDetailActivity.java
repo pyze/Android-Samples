@@ -4,7 +4,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -47,9 +46,9 @@ public class MethodDetailActivity extends AppCompatActivity {
 		if(parametersCount > 0) {
 			for(int index = 0; index < parametersCount; index++) {
 				String parameterType = parametersTypeArray[index].getName();
-				if(parameterType.equalsIgnoreCase("java.util.Map")) {
+				if(parameterType.equalsIgnoreCase("java.util.HashMap")) {
 					mCustomAttributesTv.setVisibility(View.VISIBLE);
-					Map<Object, Object> map = getCustomAttributesMap();
+					HashMap<Object, Object> map = getCustomAttributesMap();
 					Set<Entry<Object, Object>> keyset = map.entrySet();
 					Iterator<Entry<Object, Object>> iterator = keyset.iterator();
 					while(iterator.hasNext()) {
@@ -110,8 +109,8 @@ public class MethodDetailActivity extends AppCompatActivity {
 	}
 	
 
-	public Map<Object, Object> getCustomAttributesMap() {
-		Map<Object, Object> map = new HashMap<Object, Object>();
+	public HashMap<Object, Object> getCustomAttributesMap() {
+		HashMap<Object, Object> map = new HashMap<Object, Object>();
 		map.put("key1", "value1");
 		map.put("key2", "value2");
 		map.put("key3", "value3");
