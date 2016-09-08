@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pyze.samples.eventsampleandroid">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="PyzeAppKey"
+            android:value="UC0UAy0kRC-dCVvCXZHSSg" />
+        <meta-data
+            android:name="devmode"
+            android:value="true" />
+
+        <activity android:name=".activity.EventClassActivity" />
+        <activity android:name=".activity.EventMethodActivity" />
+        <activity android:name=".activity.EventInvokeActivity" />
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.PyzeEventHomeActivty"></activity>
+    </application>
+
+</manifest>

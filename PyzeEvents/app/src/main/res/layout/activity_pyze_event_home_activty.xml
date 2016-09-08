@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activity.EventClassActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pyze_logo"
+        android:layout_weight="0.1"
+        android:layout_gravity="center"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/event_menu_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="@dimen/event_item_text_size"
+            android:backgroundTint="@color/colorButtonBackground"
+            android:layout_marginTop="@dimen/event_item_margin"
+            android:layout_marginLeft="@dimen/event_item_margin"
+            android:layout_marginRight="@dimen/event_item_margin"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:textAllCaps="false"
+            android:text="Pyze Events"/>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/about_pyze_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="@dimen/event_item_text_size"
+            android:backgroundTint="@color/colorButtonBackground"
+            android:layout_marginTop="@dimen/event_item_margin"
+            android:layout_marginLeft="@dimen/event_item_margin"
+            android:layout_marginRight="@dimen/event_item_margin"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:textAllCaps="false"
+            android:text="About Pyze"/>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/show_unread_message_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="@dimen/event_item_text_size"
+            android:backgroundTint="@color/colorButtonBackground"
+            android:layout_marginTop="@dimen/event_item_margin"
+            android:layout_marginLeft="@dimen/event_item_margin"
+            android:layout_marginRight="@dimen/event_item_margin"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:textAllCaps="false"
+            android:text="Show Unread In App Message"/>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/show_all_messages_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="@dimen/event_item_text_size"
+            android:backgroundTint="@color/colorButtonBackground"
+            android:layout_marginTop="@dimen/event_item_margin"
+            android:layout_marginLeft="@dimen/event_item_margin"
+            android:layout_marginRight="@dimen/event_item_margin"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:textAllCaps="false"
+            android:text="Show All In App Message"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
