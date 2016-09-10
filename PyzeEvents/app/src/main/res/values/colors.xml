@@ -6,4 +6,5 @@
     <color name="colorTextPrimary">#000000</color>
     <color name="colorButtonBackground">#75afce</color>
     <color name="colorHeaderBackground">#4c7f9b</color>
+    <color name="colorSplashBackgroung">#ffffff</color>
 </resources>
