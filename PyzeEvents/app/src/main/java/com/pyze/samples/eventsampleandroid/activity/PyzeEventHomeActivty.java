@@ -47,8 +47,7 @@ public class PyzeEventHomeActivty extends AppCompatActivity {
         findViewById(R.id.show_all_messages_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Pyze.showInAppNotificationUI(PyzeEventHomeActivty.this,
-                        Constants.PyzeInAppMessageType.PyzeInAppTypeAll, "#ff00ff", "#ff3300", "#CCFF66", "#0000FF ", new InAppNotificationTemplateDialogFragment.OnButtonClickListener() {
+                Pyze.showInAppNotificationUI(PyzeEventHomeActivty.this, Constants.PyzeInAppMessageType.PyzeInAppTypeAll, "#C9C9C9 ", new InAppNotificationTemplateDialogFragment.OnButtonClickListener() {
                     @Override
                     public void onButtonClicked(Pyze.InAppStatus inAppStatus) {
                         Toast.makeText(PyzeEventHomeActivty.this,"In App Button Clicked!",Toast.LENGTH_SHORT).show();
